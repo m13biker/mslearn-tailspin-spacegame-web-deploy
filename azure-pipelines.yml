@@ -113,5 +113,5 @@ stages:
             inputs:
               azureSubscription: 'B1K3R Suscription'
               appType: 'webAppLinux'
-              appName: '$(WebAppNameDev)'
+              appName: '$(WebAppNameStaging)'
               package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
