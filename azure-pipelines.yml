@@ -74,9 +74,6 @@ stages:
   jobs:
   - deployment: Deploy
     pool: Linux-Self-Hosted-Agent
-    #  vmImage: 'ubuntu-20.04'
-    #  demands:
-    #  - npm
     environment: Development
     variables:
     - group: Tailspin.VariableGroup
@@ -100,9 +97,6 @@ stages:
   jobs:
   - deployment: Deploy
     pool: Linux-Self-Hosted-Agent
-    #  vmImage: 'ubuntu-20.04'
-    #  demands:
-    #  - npm
     environment: Staging
     variables:
     - group: 'Tailspin.VariableGroup'
