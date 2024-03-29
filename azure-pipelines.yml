@@ -77,7 +77,7 @@ stages:
       vmImage: 'ubuntu-20.04'
     environment: dev
     variables:
-    - group: Release
+    - group: Tailspin.VariableGroup
     strategy:
       runOnce:
         deploy:
