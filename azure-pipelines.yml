@@ -1,5 +1,5 @@
 trigger:
-- '*'
+- 'main'
 
 variables:
   buildConfiguration: 'Release'
@@ -11,10 +11,10 @@ stages:
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
-    pool:
-      vmImage: 'ubuntu-20.04'
-      demands:
-      - npm
+    pool: Linux-Self-Hosted-Agent
+    #  vmImage: 'ubuntu-20.04'
+    #  demands:
+    #  - npm
 
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
@@ -73,8 +73,10 @@ stages:
   condition:  succeeded()
   jobs:
   - deployment: Deploy
-    pool:
-      vmImage: 'ubuntu-20.04'
+    pool: Linux-Self-Hosted-Agent
+    #  vmImage: 'ubuntu-20.04'
+    #  demands:
+    #  - npm
     environment: Development
     variables:
     - group: Tailspin.VariableGroup
@@ -97,8 +99,10 @@ stages:
   dependsOn: Dev
   jobs:
   - deployment: Deploy
-    pool:
-      vmImage: 'ubuntu-20.04'
+    pool: Linux-Self-Hosted-Agent
+    #  vmImage: 'ubuntu-20.04'
+    #  demands:
+    #  - npm
     environment: Staging
     variables:
     - group: 'Tailspin.VariableGroup'
